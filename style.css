@@ -1,0 +1,1034 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    scroll-behavior: smooth;
+}
+
+/* Estilos generales para el header */
+header {
+    background-color: #05bcff;
+    padding: 10px 0;
+    
+}
+
+/* Contenedor del contenido del header */
+header .container {
+    display: flex;
+    justify-content: space-between; /* Espacio entre elementos */
+    align-items: center; /* Alineación vertical */
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor */
+    padding: 0 20px; /* Espaciado interno */
+}
+
+/* Estilos para el logo */
+header .logo {
+    font-size: 20px;
+    padding-right: 80px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Estilos para el nav (oculto en dispositivos móviles) */
+#navMenu {
+    display: none;
+}
+
+/* Botón de menú (visible en dispositivos móviles) */
+.menu-toggle {
+    font-size: 24px;
+    color: #fffefe;
+    cursor: pointer;
+    background: none;
+    
+    border: none;
+    display: block;
+}
+
+/* Panel deslizante desde el lado izquierdo */
+#menuPanel {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%; /* Ocupa la mitad de la pantalla */
+    height: 100%;
+    background-color: /*rgb(84, 184, 202)*/ rgba(249, 247, 244, 0.705);
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.2);
+    z-index: 9999; /* Superponer sobre todo */
+    padding: 20px;
+    overflow-y: auto;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#menuPanel li{
+    border-style:dashed;
+    border-radius: 10%;
+}
+
+/* Fondo oscuro detrás del panel */
+#menuBackdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    z-index: 9998; /* Detrás del panel */
+}
+
+/* Estilos para los elementos del panel */
+#menuPanel ul {
+    list-style: none;
+    padding: 0;
+}
+
+#menuPanel ul li {
+    margin: 15px 0;
+}
+
+#menuPanel ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+}
+
+#menuPanel ul li a:hover {
+    color: #eff1f2;
+}
+
+
+.social-buttons {
+    display: flex;
+    justify-content: space-around; /* Espacio entre los iconos */
+    margin-top: 20px;
+}
+
+.social-buttons a {
+    text-decoration: none;
+}
+
+.social-buttons img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Redondear iconos */
+    transition: transform 0.3s ease;
+}
+
+.social-buttons img:hover {
+    transform: scale(1.1); /* Agrandar icono al pasar el mouse */
+}
+/* Botón de cerrar panel */
+#closePanel {
+    display: block;
+    margin: 20px 0 0;
+    padding: 10px 20px;
+    background-color: #080808;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#closePanel:hover {
+    background-color: #6b00b3;
+}
+.mesagge-container {
+    width: 81%;
+    background-color: #000000;
+    overflow: hidden; /* Oculta el desbordamiento */
+    border-top: none; /* Borde superior */
+    position:fixed;
+    z-index: 2;
+}
+
+.message {
+    display: flex;
+    justify-content: flex-end; /* Alinea los mensajes al extremo derecho */
+    animation: moveMessages 25s infinite linear; /* Animación para mover los mensajes */
+    color: #ffffff;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.message p {
+    margin: 0 40px; /* Espacio entre las palabras */
+    white-space: nowrap; /* Evita el salto de línea */
+    font-size: 14px; /* Reduce el tamaño de las letras */
+}
+
+/* Define la animación para mover los mensajes */
+@keyframes moveMessages {
+    0% {
+        transform: translateX(100%); /* Comienza fuera del contenedor */
+    }
+    100% {
+        transform: translateX(-100%); /* Termina fuera del contenedor */
+    }
+}
+/* Estilo para el contenedor de la imagen  MODIFICAR ----------------------------------------*/
+.image-container-slider {
+    width: 100%;
+    height: auto;
+}
+.image-container-slider img {
+    width: 100%;
+   
+    height: 450px;
+}
+
+
+#images-wrapper {
+    display: block;
+    justify-content: center; /* Centra las imágenes horizontalmente */
+    align-items: center; /* Alinea verticalmente si hay más contenido en el contenedor */
+    
+    padding: 0.3px; /* Espacio entre el contenido y los bordes de la página */
+}
+
+/* Contenedor individual para cada imagen */
+.image-container {
+    position: relative; /* Necesario para posicionar el texto encima de la imagen */
+    display: flex;
+    flex-direction: column; /* Coloca el texto y la imagen en columna */
+    align-items: center; /* Centra el contenido */
+    padding-top:40px;
+    width: 100%;
+    height: auto;
+}
+
+/* Estilo para las imágenes */
+.image-container img {
+    width: 340px; /* Tamaño uniforme para las imágenes */
+    height: 360px; /* Tamaño uniforme para las imágenes */
+    object-fit: cover; /* Ajusta la imagen dentro del contenedor sin distorsionar */
+    border-radius: 5px; /* Opcional: bordes redondeados */
+}
+
+/* Estilo para el texto encima de la imagen */
+.image-label {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro con opacidad */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px; /* Bordes redondeados */
+    font-size: 14px;
+}
+
+
+/* Clase para aplicar a los elementos que deben aparecer al hacer scroll */
+.scroll-animate {
+    opacity: 0;
+    transform: translateX(100px); /* Comienza fuera de la pantalla hacia la derecha */
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+/* Clase que activa la animación al hacer scroll */
+.scroll-animate.active {
+    opacity: 1;
+    transform: translateX(0); /* Se mueve hacia su posición original */
+}
+
+.product-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Distancia entre grupos de productos */
+    align-items: center;
+    padding: 20px;
+}
+
+/* Grupo de 4 productos */
+.product-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Distancia entre productos dentro del grupo */
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Contenedor de cada producto individual */
+.product-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Estilo de las imágenes dentro de cada producto */
+.product-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+/* Contenedor para el nombre del producto y el precio */
+.product-info {
+    margin-top: 10px;
+}
+
+/* Estilo para el nombre del producto */
+.product-name {
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+/* Estilo para el precio */
+.product-price {
+    margin-top: 5px;
+    color: #666;
+}
+
+/* Estilo para el texto GIFTS */
+.gifts-link {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    margin-bottom: 20px; /* Espacio entre el texto y los productos */
+    text-align: center;
+}
+
+/* Cambia el color del texto al pasar el mouse */
+.gifts-link:hover {
+    color: #30afcb;
+}
+
+
+
+/*MODIFICAR ---------------------------------------------------------------------------------*/
+
+/* Estilos para pantallas grandes */
+@media (min-width: 768px) {
+    body {
+        /*Observar*/
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+    }
+    #menuToggle {
+        display: none; /* Ocultar el botón de menú */
+    }
+
+    #navMenu {
+        display: block; /* Mostrar el menú */
+    }
+    
+    header {
+        position: fixed;
+        z-index: 1000;
+        width: 100%;
+    }
+
+    header .container {
+        
+        display:block;
+        align-items: center;
+        justify-content: center;
+
+         /* Espacio entre elementos justify-content:center;*/
+        /* Alineación vertical  align-items:center; */
+        width: 100%; /* Ancho máximo del contenedor */
+        margin: 0 auto; /* Centra el contenedor */
+        padding: 20px; /* Espaciado interno */
+    }
+    
+    /* Estilos para el logo */
+    
+    header.logo {
+       
+        margin-bottom: 0px;
+        
+        text-align: center;
+        justify-content: center;
+    }
+    
+    nav ul {
+        
+        display:flex; /* Mostrar los elementos del menú en línea */
+        padding-left: 100px;
+        padding-top: 20px;
+        list-style: none;
+        margin: 0px;
+        
+       
+    }
+
+    nav ul li {
+        margin: 0 20px; /* Espacio entre los elementos del menú */
+        position: relative;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #000000;
+        transition: border-bottom 0.3s ease;
+        
+    }
+
+    nav ul li a:hover {
+        color: #f4e433;
+        border-bottom: 3px solid yellow;
+    }
+    .nav ul li ul.dropdown {
+        display: none;
+        position: absolute;
+        top: 110%; /* Posiciona el submenú justo debajo del elemento padre */
+        left: 0;
+        background-color: rgb(12, 12, 12);
+        padding: 0px 0;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 9999; /* Asegura que el menú se superponga sobre otros elementos */
+        width: 200px;
+    }
+    
+    /* Estilo para los elementos del submenú */
+    .nav ul li ul.dropdown li {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .nav ul li ul.dropdown li a {
+        padding: 10px 20px;
+        display: block;
+        color: #fafafa;
+        text-decoration: none;
+    }
+    
+    .nav ul li ul.dropdown li a:hover {
+        background-color: #000000;
+        color: #f6ff00;
+    }
+    
+    /* Mostrar el menú desplegable al pasar el mouse sobre el enlace padre */
+    .nav ul li:hover ul.dropdown {
+        display: block;
+    }
+
+    .mesagge-container {
+        width: 100%;
+        background-color: #000000;
+        overflow: hidden; /* Oculta el desbordamiento */
+        border-top: none; /* Borde superior */
+        position:fixed;
+        z-index: 2;
+    }
+    
+    .message {
+        display: flex;
+        justify-content: flex-end; /* Alinea los mensajes al extremo derecho */
+        animation: moveMessages 25s infinite linear; /* Animación para mover los mensajes */
+        color: #ffffff;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    }
+    
+    .message p {
+        margin: 0 40px; /* Espacio entre las palabras */
+        white-space: nowrap; /* Evita el salto de línea */
+        font-size: 14px; /* Reduce el tamaño de las letras */
+    }
+    
+    /* Define la animación para mover los mensajes */
+    @keyframes moveMessages {
+        0% {
+            transform: translateX(100%); /* Comienza fuera del contenedor */
+        }
+        100% {
+            transform: translateX(-100%); /* Termina fuera del contenedor */
+        }
+    }
+
+    /* Estilo para el contenedor de la imagen */
+    .image-container-slider {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    
+    /* Asegura que la imagen ocupe todo el ancho de la pantalla */
+    .image-container-slider img {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: transform 0.5s ease-in-out;
+        z-index: 1;
+    }
+    .image-container-sliders {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        padding-top: 40px;
+    }
+    
+    /* Asegura que la imagen ocupe todo el ancho de la pantalla */
+    .image-container-sliders img {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: transform 0.5s ease-in-out;
+        z-index: 1;
+    }
+/*---------------------------EFECTO MOVER A LA IZQUIERDA ------------------------------------*/
+    /* Clase para el efecto de salida hacia la izquierda */
+/* Clase para el efecto de salida rápida hacia la izquierda */
+.slide-out-left-fast {
+    transform: translateX(-30%); /* Cambia a -30% para que la segunda imagen aparezca más rápido */
+    transition: transform 1s ease-in-out; /* Salida rápida */
+    z-index: 0;
+}
+
+/* Clase para la entrada rápida con avance */
+/* Clase para la entrada con avance y desplazamiento desde el 20% */
+.slide-in-left-advance {
+    opacity: 0;
+    transform: translateX(20%);
+    animation: slideInAdvance 0.4s ease-out forwards; /* Cambiamos a 0.8s y ease-out para que sea más suave */
+    z-index: 1;
+}
+
+/* Animación para avanzar y desplazarse hacia la izquierda */
+@keyframes slideInAdvance {
+    0% {
+        opacity: 0;
+        transform: translateX(20%);
+    }
+    70% {
+        opacity: 1;
+        transform: translateX(1%); /* Desplazamiento más lento hacia la izquierda */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* Termina en su posición final */
+    }
+}
+/*----------------------------------EFECTO MOVER A LA IZQUIERDA------------------------------*/
+
+
+#images-wrapper {
+    display: flex;
+    justify-content: center; /* Centra las imágenes horizontalmente */
+    align-items: center; /* Alinea verticalmente si hay más contenido en el contenedor */
+    gap: 40px; /* Espacio entre las imágenes */
+    padding: 18px; /* Espacio entre el contenido y los bordes de la página */
+    margin-bottom: 100px;
+}
+
+/* Contenedor individual para cada imagen */
+.image-container {
+    position: relative; /* Necesario para posicionar el texto encima de la imagen */
+    display: flex;
+    flex-direction: column; /* Coloca el texto y la imagen en columna */
+    align-items: center; /* Centra el contenido */
+    padding-top: 100px;
+    width: 100%;
+    height: auto;
+}
+
+/* Estilo para las imágenes */
+.image-container img {
+    width: 360px; /* Tamaño uniforme para las imágenes */
+    height: 360px; /* Tamaño uniforme para las imágenes */
+    object-fit: cover; /* Ajusta la imagen dentro del contenedor sin distorsionar */
+    border-radius: 5px; /* Opcional: bordes redondeados */
+}
+
+/* Estilo para el texto encima de la imagen */
+.image-label {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro con opacidad */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px; /* Bordes redondeados */
+    font-size: 14px;
+}
+
+/* Clase para aplicar a los elementos que deben aparecer al hacer scroll */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(50px); /* Comienza desplazado hacia abajo */
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+/* Clase que activa la animación al hacer scroll */
+.scroll-animate.active {
+    opacity: 1;
+    transform: translateY(0); /* Se mueve hacia su posición original */
+}
+
+
+
+
+/* Contenedor principal que contiene todos los productos */
+.product-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Distancia entre grupos de productos */
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 100px;
+}
+
+/* Grupo de 4 productos */
+.product-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Distancia entre productos dentro del grupo */
+    width: 100%;
+    max-width: 1200px;
+    padding-top: 20px;
+}
+
+/* Contenedor de cada producto individual */
+.product-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Estilo de las imágenes dentro de cada producto */
+.product-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Contenedor para el nombre del producto y el precio */
+.product-info {
+    margin-top: 10px;
+}
+
+/* Estilo para el nombre del producto */
+.product-name {
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+/* Estilo para el precio */
+.product-price {
+    margin-top: 5px;
+    color: #666;
+}
+
+/* Estilo para el texto GIFTS */
+.gifts-link {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    margin-bottom: 150px; /* Espacio entre el texto y los productos */
+    margin-top: 150px;
+    text-align: center;
+    
+}
+
+/* Cambia el color del texto al pasar el mouse */
+.gifts-link:hover {
+    color: #30afcb;
+}
+
+.discount-section {
+    text-align: center;
+    padding: 40px;
+    background-color: #f7f7f7;
+    margin: 0 auto;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.discount-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.subtext {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.email-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.email-input {
+    padding: 15px;
+    width: 70%;
+    border-radius: 25px;
+    border: 2px solid #ddd;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.email-input:focus {
+    border-color: #ff6600;
+}
+
+.submit-button {
+    padding: 15px 30px;
+    border-radius: 25px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #e65500;
+}
+
+
+.footer {
+    background-color: rgba(8, 8, 8, 0.79); /*#333*/
+    color: white;
+    padding: 40px 20px;
+    margin-top: 80px;
+    text-align: center;
+    position: relative;
+}
+
+.footer-social {
+    margin-bottom: 20px;
+}
+
+.social-button {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-icon {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s;
+}
+
+.social-button:hover .social-icon {
+    transform: scale(1.1);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+    text-align: left;
+}
+
+.footer-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ff6600;
+}
+
+.footer-section p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #ff6600;
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+/* Estilos para el botón de WhatsApp */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    z-index: 1000;
+}
+
+.whatsapp-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s;
+}
+
+/* Efecto hover */
+.whatsapp-button:hover img {
+    transform: scale(1.1);
+}
+}
+
+
+@media (max-width: 500px) {
+
+    header {
+        position: fixed;
+        width: 81%;
+        
+       
+       
+    }
+   
+    .product-group {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .product-item {
+        flex: 1 1 calc(33.33% - 15px); /* Cada producto ocupa el 33.33% del ancho del contenedor menos el gap */
+    }
+
+    /* Estilo para el texto GIFTS */
+.gifts-link {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    margin-bottom: 20px; /* Espacio entre el texto y los productos */
+    text-align: center;
+}
+
+/* Cambia el color del texto al pasar el mouse */
+.gifts-link:hover {
+    color: #30afcb;
+}
+
+.image-container-sliders {
+    padding-top: 30px;
+    width: 100%;
+    height: auto;
+    
+}
+
+.image-container-sliders img {
+    width: 100%;
+   
+    height: auto;
+}
+
+
+.discount-section {
+    text-align: center;
+    padding: 40px;
+    background-color: #f7f7f7;
+    margin: 0 auto;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.discount-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.subtext {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.email-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.email-input {
+    padding: 15px;
+    width: 70%;
+    border-radius: 25px;
+    border: 2px solid #ddd;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.email-input:focus {
+    border-color: #ff6600;
+}
+
+.submit-button {
+    padding: 15px 30px;
+    border-radius: 25px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #e65500;
+}
+.discount-text {
+    font-size: 2rem;
+}
+
+.subtext {
+    font-size: 1rem;
+}
+
+.email-input {
+    width: 60%;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.footer-social {
+    margin-bottom: 20px;
+}
+
+.social-button {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s;
+}
+
+.social-button:hover .social-icon {
+    transform: scale(1.1);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+    text-align: left;
+}
+
+.footer-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ff6600;
+}
+
+.footer-section p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #ff6600;
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+/* Estilos para el botón de WhatsApp */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    z-index: 1000;
+}
+
+.whatsapp-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s;
+}
+
+/* Efecto hover */
+.whatsapp-button:hover img {
+    transform: scale(1.1);
+}
+}
+
+
