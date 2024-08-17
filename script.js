@@ -113,7 +113,7 @@ handleScroll();
 
 
 // Slider 5
-const images5 = ["suscribete.gif", "envios.png","Gifts.gif"];
+const images5 = ["Suscribete.gif", "Envios.png","Gifts.gif"];
 let currentIndex5 = 0;
 
 function changeImage5() {

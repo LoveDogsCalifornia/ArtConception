@@ -135,7 +135,7 @@ header .logo {
     background-color: #6b00b3;
 }
 .mesagge-container {
-    width: 81%;
+    width: 100%;
     background-color: #000000;
     overflow: hidden; /* Oculta el desbordamiento */
     border-top: none; /* Borde superior */
@@ -815,7 +815,8 @@ header .logo {
 
     header {
         position: fixed;
-        width: 81%;
+        width: 100%;
+        z-index: 1000;
         
        
        
